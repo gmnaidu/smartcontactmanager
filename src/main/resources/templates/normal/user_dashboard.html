@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <section>
+      
+      <div class="container">
+         <div class="body">
+             <div class="card-body">
+             
+                 <div class="container text-center mt-3">
+                    <img style="width: 200px; height: 200px" class="my_profile_picture" alt="profile image" src="" th:src="@{'/image/'+${user.imageUrl}}"/>
+                </div> 
+                
+                <h1  class="text-center mt-3 text-secondary font-italic font-lght"> Start Adding Your Contacts on Cload...</h1>
+                
+                <a th:href="@{/user/add_contact}" class="btn btn-primary mt-4 btn-block text-uppercase">Add New Contacts</a>
+             
+             </div>
+         </div>
+      </div>
+
+      <script>
+        
+
+         $(document).ready(()=>{
+            $(".item").removeClass("active");
+            $("#home-link").addClass("active");
+         });
+      </script>
+     
+   </section>
+
+</body>
+</html>

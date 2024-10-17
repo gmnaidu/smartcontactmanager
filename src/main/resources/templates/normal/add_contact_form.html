@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mt-1 mr-3">
+
+			<div class="card-body">
+				<h1 class="text-center">Add Contact</h1>
+
+				<div class="container-fluid mt-1">
+
+					<div class="row">
+
+						<div class="col-md-8 offset-md-2">
+
+							<form enctype="multipart/form-data" action="#" th:object="${contact}"  method="post" th:action="@{/user/process-contact}">
+
+								<!-- firstname -->
+								
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa fa-plus"></i>
+										</div>
+									</div>
+									<input required name="name" type="text" class="form-control"
+										id="firstName" placeholder="Enter Name here">
+								</div>
+								
+								<!-- secondname -->
+								
+								<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fas fa-user-alt"></i>
+										</div>
+									</div>
+									<input required name="nickname" type="text" class="form-control"
+										id="secondName" placeholder="Enter Second Name here">
+								</div>
+								
+								<!-- phone -->
+								
+								<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa fa-phone"></i>
+										</div>
+									</div>
+									<input required name="phone" type="number" class="form-control"
+										id="phonenumber" placeholder="Enter phone number here">
+								</div>
+								
+								<!-- email -->
+								
+								<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											@
+										</div>
+									</div>
+									<input required name="email" type="email" class="form-control"
+										id="email" placeholder="Enter email here">
+								</div>
+								
+								<!-- work field -->
+								
+								<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa fa-briefcase"></i>
+										</div>
+									</div>
+									<input required name="work" type="text" class="form-control"
+										id="work" placeholder="Enter work here">
+								</div>
+								
+								<!-- contact description -->
+								
+								<div class="form-group mt-3">
+								
+								  <textarea name="description" id="mytextarea" rows="8" cols="" placeholder="Enter Contact Description Here" class="form-control"></textarea>
+								</div>
+								
+								<!-- profile image -->
+								
+								<div class="custom-file">
+								  <input type="file" name="profileImage" >
+								</div>
+								
+							
+								<div class="container text-center">
+								  <button class="btn btn-outline-primary">Save Contact</button>
+								
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+				
+				</div>
+			</div>
+			<!-- <script src="https://cdn.tiny.cloud/1/szflq8lpuir1c1lwobrq8fz3epbdxcmvrcn7tko5xy1yb1ob/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+			
+			<script>
+			  tinymce.init({
+			    selector: 'textarea',
+			    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+			    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+			    tinycomments_mode: 'embedded',
+			    tinycomments_author: 'Author name',
+			    mergetags_list: [
+			      { value: 'First.Name', title: 'First Name' },
+			      { value: 'Email', title: 'Email' },
+			    ],
+			    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+			  }); -->
+			</script>
+			 
+	   <!--  <script>
+	      tinymce.init({
+	        selector: '#mytextarea'
+	      });
+	    </script> -->
+
+		<script>
+        
+
+			$(document).ready(()=>{
+			   $(".item").removeClass("active");
+			   $("#add-link").addClass("active");
+			});
+		 </script>
+
+
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+
+   <section>
+      
+     <div class="container">
+        <div class="card">
+
+            <div class="cardbody">
+
+                  <!-- This is email form-->
+              <h3 class="text-center">Your Registed Email</h3>
+
+              <form action="#" th:action="@{/send-otp}" method="post">
+                  
+                  <div class="form-group">
+                      <input name="email" required placeholder="Enter Email Here!"  type="email" class="form-control">
+                  </div>
+
+
+                  <div class="container text-center">
+                    <button  class="btn btn-warning" type="submit">SendOTP</button>
+                  </div>
+
+
+              </form>
+
+            </div>
+            
+          
+
+
+            
+            
+        </div><!-- /card-container -->
+    </div>
+   </section>
+
+</body>
+</html>
